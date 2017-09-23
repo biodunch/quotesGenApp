@@ -1,0 +1,20 @@
+<h1>Famous Quotes</h1>
+
+<blockquote>
+  <p id="quoteBody">Fetching...</p>
+  <footer id="quoteAuthor"></footer>
+</blockquote>
+
+<div class="alert alert-danger">
+  <h3> Kindly login to see the amazing quotes</h3>
+</div>
+
+
+<script>
+  $(document).ready(function(){
+    jQuery.getJSON('https://talaikis.com/api/quotes/random', function(data){
+      $('#quoteBody').text(data.quote)
+      $('#quoteAuthor').text(data.author)
+    })
+  })
+</script>

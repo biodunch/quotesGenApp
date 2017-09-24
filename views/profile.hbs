@@ -7,7 +7,9 @@
         <div class="panel-body">
             {{!-- <img src="http://spaceacre.co.za/wp-content/uploads/avatar-1.png" class="img-circle img-responsive" alt="profile-pic"> --}}
             <img src="{{user.picture}}" class="img-circle img-responsive" alt="profile-pic">
-            <h2>Name : <span> {{user.nickname}}</span></h2>
+            <h2>Name : <span> {{ user.displayName }} </span> </h2>
+            <h2>Nickname : <span> {{ user.nickname }}</span></h2>
+            <h2>Gender : <span> {{ user.gender }} </span> </h2>
         </div>
     </div>
 </div>

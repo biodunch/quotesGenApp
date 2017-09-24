@@ -1,20 +1,23 @@
-<h1>Famous Quotes</h1>
+{{#if loggedIn }}
+  <h1>Famous Quotes</h1>
+  <blockquote>
+    <p id="quoteBody">Fetching...</p>
+    <footer id="quoteAuthor"></footer>
+  </blockquote>
+{{else}}
+  <div class="alert alert-danger">
+    <h3> Kindly login to see the amazing quotes</h3>
+    <h4>Please <a href="/login"> Log In</a> to continue.</h4>
+  </div>
+{{/if}}
 
-<blockquote>
-  <p id="quoteBody">Fetching...</p>
-  <footer id="quoteAuthor"></footer>
-</blockquote>
-
-{{!-- <div class="alert alert-danger">
-  <h3> Kindly login to see the amazing quotes</h3>
-</div>
- --}}
 
 <script>
-  $(document).ready(function(){
-    jQuery.getJSON('https://talaikis.com/api/quotes/random', function(data){
+  $(document).ready(function () {
+    jQuery.getJSON('https://talaikis.com/api/quotes/random', function (data) {
       $('#quoteBody').text(data.quote)
       $('#quoteAuthor').text(data.author)
     })
   })
+
 </script>

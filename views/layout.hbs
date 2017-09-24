@@ -29,11 +29,15 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li ><a href="/">Home <span class="sr-only">(current)</span></a></li>
-          <li class="active"><a href="/user">Profile</a></li>
+          <li class="active" ><a href="/">Home <span class="sr-only">(current)</span></a></li>
+          <li><a href="/user">Profile</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/logout">Logout</a></li>
+          {{#if loggedIn}}
+            <li><a href="/logout">Logout</a></li>
+          {{else}}
+            <li><a href="/login">Login</a></li>
+          {{/if}}
         </ul>
       </div>
       <!-- /.navbar-collapse -->
